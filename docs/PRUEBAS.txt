@@ -1,0 +1,42 @@
+VALIDACION DEL PROTOTIPO ACCESO RFID
+Fecha: 19-11-2026
+Autor de la entrega: Benjamin Dinamarca
+
+COMPILACION
+Gradle 8.11.1, Android Gradle Plugin 8.9.1, Kotlin 2.1.20, JDK 21.
+SDK de compilacion y destino 35. Minimo 26.
+assembleDebug y lintDebug finalizaron correctamente. Lint sin errores;
+mantiene avisos de textos en espanol y versiones de dependencias disponibles.
+
+PRUEBAS INSTRUMENTADAS
+Comando: gradlew.bat connectedDebugAndroidTest
+Dispositivos virtuales: Medium_Phone_API_37.0 y RFID_Second, Android API 37.
+Resultado: 6 pruebas en cada emulador, 12 ejecuciones aprobadas, sin fallas.
+
+1. SQLite: registro, usuario duplicado, login incorrecto, consulta parametrizada,
+   persistencia al reabrir la base, aislamiento de cuentas, sal y UID cifrado.
+2. Mensajes: rechazo de clave equivocada, alteracion, repeticion y conexion anterior.
+3. Canal: 30 mensajes consecutivos, espera sin lecturas, desconexion y reconexion.
+   En la ejecucion de referencia se recibieron 30 de 30 mensajes en 4 ms,
+   en loopback del emulador. No representa la latencia de Wi-Fi fisico.
+4. Codigo de enlace incorrecto y trama sin cifrar: el servidor sigue disponible.
+5. Un resultado de base de datos retrasado no reabre la puerta tras cerrar sesion.
+6. Un resultado de base de datos retrasado no reabre la puerta tras desconectar.
+
+RECORRIDO DE INTERFAZ ENTRE DOS APLICACIONES
+1. Registro, rechazo de clave incorrecta y login en el primer Android.
+2. Registro, rechazo de clave incorrecta y login en el segundo Android.
+3. Tarjetas permitida y denegada en modo local.
+4. Conexion de las dos instancias Android por red virtual y reenvio TCP de ADB.
+5. Lecturas remotas, respuesta en ambos y cierre automatico a los 3 segundos.
+6. Historial: cuatro registros en servidor y dos en cliente.
+7. Desconexion y reconexion con un codigo nuevo.
+8. Cierre de sesion y persistencia al volver a entrar.
+9. UID invalido rechazado sin generar una apertura ni un evento.
+
+LIMITES Y COMPROBACION EN CLASE
+No se conecto hardware Arduino ni se midio un actuador fisico.
+Dos emuladores no miden alcance, interferencias, consumo ni latencia de radio.
+Antes de presentar se deben repetir los pasos del README con dos telefonos
+en una misma red Wi-Fi, probar perdida de red y comparar separacion y obstaculos.
+La aplicacion es una simulacion academica y no tiene certificacion ISO.

@@ -1,0 +1,9 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:padding="24dp">
+    <TextView style="@style/PageTitle" android:text="Historial de accesos" />
+    <TextView style="@style/BodyText" android:text="Registros locales de tu usuario, del más reciente al más antiguo." />
+    <TextView android:id="@+id/history_summary" style="@style/BodyText" />
+    <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+        <TextView android:id="@+id/history_rows" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="16sp" android:lineSpacingExtra="4dp" android:textIsSelectable="true" />
+    </ScrollView>
+    <com.google.android.material.button.MaterialButton android:id="@+id/history_back" style="@style/WideButton" android:text="Volver a Monitoreo" />
+</LinearLayout>

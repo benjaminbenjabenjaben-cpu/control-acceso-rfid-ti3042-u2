@@ -1,0 +1,20 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <TextView style="@style/PageTitle" android:text="Monitoreo" />
+        <TextView android:id="@+id/welcome" style="@style/BodyText" />
+        <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp" app:strokeWidth="1dp" app:cardElevation="0dp" android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                <TextView style="@style/BodyText" android:text="Estado del acceso simulado" />
+                <TextView android:id="@+id/door_state" style="@style/PageTitle" android:text="CERRADA · 0°" android:accessibilityLiveRegion="polite" />
+                <TextView android:id="@+id/latest_reading" style="@style/BodyText" android:text="Sin lecturas" />
+                <TextView android:id="@+id/monitor_notice" style="@style/BodyText" android:accessibilityLiveRegion="polite" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <TextView android:id="@+id/network_state" style="@style/BodyText" />
+        <TextView style="@style/BodyText" android:text="RC522 y SG90 simulados. No hay un Arduino conectado." android:textSize="14sp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/open_activator" style="@style/WideButton" android:text="Ir al Activador" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/open_connection" style="@style/WideButton" android:text="Conectar otro Android" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/open_history" style="@style/WideButton" android:text="Ver historial" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/logout" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" android:text="Cerrar sesión" />
+    </LinearLayout>
+</ScrollView>

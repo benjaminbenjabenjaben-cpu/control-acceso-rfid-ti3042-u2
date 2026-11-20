@@ -1,0 +1,17 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp" android:gravity="center_vertical">
+        <ImageView android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/ic_access" android:contentDescription="Control de acceso RFID" android:layout_marginBottom="24dp" />
+        <TextView style="@style/PageTitle" android:text="Acceso RFID" />
+        <TextView android:id="@+id/auth_description" style="@style/BodyText" android:text="Inicia sesión para monitorear y probar el acceso." />
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Usuario" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/username" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textVisiblePassword" android:maxLength="24" android:singleLine="true" android:autofillHints="username" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Contraseña" app:endIconMode="password_toggle" android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/password" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textPassword" android:maxLength="64" android:singleLine="true" android:saveEnabled="false" android:autofillHints="password" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView android:id="@+id/auth_message" style="@style/BodyText" android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/auth_submit" style="@style/WideButton" android:text="Ingresar" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/auth_toggle" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" android:text="Crear cuenta local" />
+        <TextView style="@style/BodyText" android:text="Prototipo académico · datos guardados en este dispositivo" android:textSize="13sp" android:layout_marginTop="16dp" />
+    </LinearLayout>
+</ScrollView>

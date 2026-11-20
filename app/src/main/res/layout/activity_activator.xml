@@ -1,0 +1,18 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <TextView style="@style/PageTitle" android:text="Activador" />
+        <TextView style="@style/BodyText" android:text="Simula una tarjeta RFID. El servidor compara el UID y abre durante 3 segundos si está autorizado." />
+        <RadioGroup android:id="@+id/card_choice" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginBottom="12dp">
+            <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/authorized_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tarjeta autorizada" android:checked="true" android:minHeight="48dp" />
+            <com.google.android.material.radiobutton.MaterialRadioButton android:id="@+id/unauthorized_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tarjeta no autorizada" android:minHeight="48dp" />
+        </RadioGroup>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="UID de la tarjeta">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/uid_input" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textCapCharacters|textNoSuggestions" android:singleLine="true" android:maxLength="11" android:text="40 84 2C 33" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView style="@style/BodyText" android:text="Puedes editar el UID. Ejemplo: 40 84 2C 33." android:textSize="14sp" android:layout_marginTop="8dp" />
+        <TextView android:id="@+id/activator_mode" style="@style/BodyText" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/send_reading" style="@style/WideButton" android:text="Probar lectura" />
+        <TextView android:id="@+id/activator_result" style="@style/BodyText" android:accessibilityLiveRegion="polite" android:layout_marginTop="16dp" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/back_monitor" style="@style/WideButton" android:text="Volver a Monitoreo" />
+    </LinearLayout>
+</ScrollView>

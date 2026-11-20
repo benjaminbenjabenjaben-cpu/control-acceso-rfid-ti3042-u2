@@ -1,0 +1,20 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent" android:layout_height="match_parent">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="24dp">
+        <TextView style="@style/PageTitle" android:text="Conexión Wi-Fi" />
+        <TextView style="@style/BodyText" android:text="Conecta ambos teléfonos a la misma red Wi-Fi. Inicia sesión en cada uno. No se necesita internet ni Arduino." />
+        <TextView android:id="@+id/local_ip" style="@style/BodyText" android:textIsSelectable="true" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/start_host" style="@style/WideButton" android:text="Android 1 · Iniciar servidor" />
+        <TextView android:id="@+id/pairing_code" style="@style/BodyText" android:textIsSelectable="true" android:layout_marginTop="8dp" />
+        <TextView style="@style/BodyText" android:text="Android 2 · Ingresa la IP y el código que muestra el servidor. Comparte el código solo con tu compañero." android:layout_marginTop="12dp" />
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="IP del servidor">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/server_ip" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:singleLine="true" android:maxLength="15" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Código de conexión" android:layout_marginTop="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/server_code" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textVisiblePassword" android:singleLine="true" android:maxLength="32" android:saveEnabled="false" android:importantForAutofill="no" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton android:id="@+id/connect_client" style="@style/WideButton" android:text="Android 2 · Conectar" />
+        <TextView android:id="@+id/connection_status" style="@style/BodyText" android:layout_marginTop="12dp" android:accessibilityLiveRegion="polite" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/disconnect" style="@style/WideButton" android:text="Desconectar" />
+        <com.google.android.material.button.MaterialButton android:id="@+id/connection_back" style="@style/Widget.MaterialComponents.Button.TextButton" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="48dp" android:textAllCaps="false" android:text="Volver a Monitoreo" />
+    </LinearLayout>
+</ScrollView>

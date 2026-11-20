@@ -1,0 +1,29 @@
+<resources>
+    <style name="Base.Theme.Acceso" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#245C4C</item>
+        <item name="colorPrimaryVariant">#183F34</item>
+        <item name="colorSecondary">#346D98</item>
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:statusBarColor">#183F34</item>
+        <item name="android:navigationBarColor">#183F34</item>
+    </style>
+    <style name="Theme.Acceso" parent="Base.Theme.Acceso" />
+    <style name="PageTitle" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="BodyText" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+    <style name="WideButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>
